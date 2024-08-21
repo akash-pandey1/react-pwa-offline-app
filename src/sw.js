@@ -25,6 +25,38 @@ registerRoute(new NavigationRoute(
 self.skipWaiting()
 clientsClaim()
 
+self.addEventListener('fetch', event => {
+  const { request } = event;
+
+  if (request.method === 'POST') {
+    event.respondWith(
+      (async () => {
+        try {
+          const response = await fetch(request.clone());
+          return response;
+        } catch (error) {
+          const clonedRequest = request.clone();
+          const body = await clonedRequest.json(); // Assuming JSON body, adapt if needed
+
+          // Save the POST request data in IndexedDB
+          await saveRequest({
+            url: clonedRequest.url,
+            method: clonedRequest.method,
+            headers: [...clonedRequest.headers],
+            body,
+          });
+
+          return new Response(
+            JSON.stringify({ success: false, message: 'Request saved offline and will be sent when online.' }),
+            { status: 503, headers: { 'Content-Type': 'application/json' } }
+          );
+        }
+      })()
+    );
+  }
+});
+
+
 
 // Handle background sync for POST requests
 self.addEventListener('sync', (event) => {
