@@ -5,6 +5,21 @@ import App from './App.jsx'
 import './index.css'
 import { store } from './store/store.js';
 
+
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+
+  
+
+  <Provider store={store}> {/* Wrap App with Provider */}
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  </Provider>
+)
+
+
 // index.js or main.js (main entry point of your React app)
 
 if ('serviceWorker' in navigator) {
@@ -26,15 +41,3 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-
-  
-
-  <Provider store={store}> {/* Wrap App with Provider */}
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  </Provider>
-)
