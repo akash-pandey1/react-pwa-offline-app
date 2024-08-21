@@ -42,20 +42,20 @@ export async function savePostsToDB(posts) {
 
 export async function saveRequest(post) {
   const db = await initDB();
-  const tx = db.transaction('posts', 'readwrite');
-  await tx.objectStore('posts').add(post);
+  const tx = db.transaction('requests', 'readwrite');
+  await tx.objectStore('requests').add(post);
   await tx.done;
 }
 
 export async function getAllRequests() {
   const db = await initDB();
-  return db.transaction('posts').objectStore('posts').getAll();
+  return db.transaction('requests').objectStore('requests').getAll();
 }
 
 export async function clearRequest(id) {
   const db = await initDB();
-  const tx = db.transaction('posts', 'readwrite');
-  await tx.objectStore('posts').delete(id);
+  const tx = db.transaction('requests', 'readwrite');
+  await tx.objectStore('requests').delete(id);
   await tx.done;
 }
 
