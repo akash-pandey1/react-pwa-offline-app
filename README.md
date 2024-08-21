@@ -1,8 +1,8 @@
 
 
-# React PWA Offline App
+# React PWA Offline App using IndexedDB
 
-# React + Vite
+# React + Vite + PWA + IndexedDB
 
 This is a demo Progressive Web App (PWA) built with React. It showcases offline capabilities by using service workers.
 
@@ -31,7 +31,9 @@ This is a demo Progressive Web App (PWA) built with React. It showcases offline 
 
    switch to offline 
 
-   refresh the applictaion app will load normally with any internet error messege.
+   check Blogs or Users page
+
+   refresh the applictaion app will load normally without any internet error messege.
 
 
 ### contact @
