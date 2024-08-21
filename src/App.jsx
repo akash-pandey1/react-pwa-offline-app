@@ -5,6 +5,9 @@ import Contact from './pages/contact/Contact'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Header from './components/header/header';
 import Blogs from './pages/blogs/Blogs';
+import PostForm from './pages/blogs/Addblog';
+import Users from './pages/users/Users';
+import AddUser from './pages/users/Adduser';
 
 function App() {
 
@@ -17,6 +20,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/add-blog" element={<PostForm/>} />
+        <Route path="/users" element={<Users/>} />
+        <Route path="/add-user" element={<AddUser/>} />
       </Routes>
     </Router> 
   )

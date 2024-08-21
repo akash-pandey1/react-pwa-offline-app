@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from '../../store/blogSlice';
 import { Link } from 'react-router-dom';
+import { fetchUsers } from '../../store/usersSlice';
 
-const Blogs = () => {
+const Users = () => {
   const dispatch = useDispatch();
-  const { posts, status, error } = useSelector((state) => state.blogs);
+  const { users, status, error } = useSelector((state) => state.users);
 
   useEffect(() => {
-    dispatch(fetchPosts());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   if (status === 'loading') {
@@ -21,10 +21,10 @@ const Blogs = () => {
 
   return (
     <div>
-      <button><Link to="/add-blog">Add Blog</Link></button>
+      <button><Link to="/add-user">Add User</Link></button>
 <ul>
-      {posts.map((post) => (
-        <li key={post.id}><span>{post.id}: </span> {post.title}</li>
+      {users.map((user) => (
+        <li key={user.id}><span>{user.id}: </span> {user.name}</li>
       ))}
     </ul>
     </div>
@@ -32,4 +32,4 @@ const Blogs = () => {
   );
 }
 
-export default Blogs;
+export default Users;
