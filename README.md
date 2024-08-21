@@ -1,8 +1,38 @@
+
+
+# React PWA Offline App
+
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a demo Progressive Web App (PWA) built with React. It showcases offline capabilities by using service workers.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Offline-first capability
+- Simple, lightweight, and fast
+- Built using React and Workbox for service workers
+- Easy to install and use as a PWA
+
+## Getting Started
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/info-next/react-pwa-offline-app.git
+   cd react-pwa-offline-app
+   npm install
+   npm run build
+   npm run preview
+
+### check offline
+   select newtwork tab from dev mode 
+
+   switch to offline 
+
+   refresh the applictaion app will load normally with any internet error messege.
+
+
+### contact @
+    Email akashdeep9226@gmail.com
